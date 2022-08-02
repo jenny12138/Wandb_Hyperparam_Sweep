@@ -1,0 +1,33 @@
+program: wandb_com.py
+# Use random sweep to find hyperparameters
+method: random
+# The metric below must be logged in the train file in the wandb.log() function. However, only the Bayesian sweep method 
+# requires the metric section to be strictly filled out.
+metric:
+  name: test_loss
+  goal: minimize
+parameters:
+  lr:
+    distribution: categorical
+    values:
+    - 0.0001
+    - 0.001
+    - 0.01
+    - 0.1
+  gc:
+    min: 10
+    max: 150
+  momentum:
+    min: 0.0
+    max: 0.99
+  hidden_dim:
+    value: 256
+  non_linearity:
+    value: relu
+  mode:
+    value: BPTT
+  epochs:
+    value: 1000
+  task:
+    value: go
+
