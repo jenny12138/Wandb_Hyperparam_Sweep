@@ -1,6 +1,6 @@
 # Wandb Parallelization Framework
 
-See the flowchart for an overview of the steps below!
+![alt text](flowchart.jpg "Flowchart")
 
 ## Step 1: Create sweep_seed_parallel.yaml
 
